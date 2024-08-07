@@ -224,7 +224,7 @@ Festlegung der Ansicht der Mitglieder Daten. Es kann ausgewählt werden welche D
 
 Alternativ zur EMail-Adresse kann auch der Name zur Absenderadresse hinzugefügt werden: "Mein Name &lt;vorstand@verein.de&gt;" Wichtig ist dabei das Format: \(Name\) \(Spitze Klammer auf\) \(Email\) \(Spitze Klammer zu\)
 
-Hinweis: Die Passwörter werden aber JVerein 2.6.1 verschlüsselt in einer Jameica-Wallet-Datei abgelegt \(im Jameica Datenordner, Unterordner "cfg"\), und sind mit dem Jameica-Masterpasswort gesichert, das beim Starten von JVerein eingegeben wird.
+Hinweis: Die Passwörter werden ab JVerein 2.6.1 verschlüsselt in einer Jameica-Wallet-Datei abgelegt \(im Jameica Datenordner, Unterordner "cfg"\), und sind mit dem Jameica-Masterpasswort gesichert, das beim Starten von JVerein eingegeben wird.
 
 Um versendete EMails auch im EMail-Postfach \(und nicht nur in JVerein\) abzulegen, gibt es zwei Möglichkeiten:
 
@@ -232,6 +232,15 @@ Um versendete EMails auch im EMail-Postfach \(und nicht nur in JVerein\) abzuleg
 2. Die EMail in den "Gesendete"-Ordner eines ggf. vorhandenen IMAP-Kontos ablegen. Dazu den Bereich "IMAP 'Gesendete'-Ordner mit den IMAP-Zugangsdaten ausfüllen und "Kopie in 'Gesendete'-Ordner IMAP ablegen" anklicken. Der technische Name des "Gesendete"-Ordners kann variieren, ist aber meist "Sent".
 
 Beide Möglichkeiten können auch kombiniert werden.
+
+### Hinweis zu den Mail Einstellungen
+- Aktiviere nie beide Optionen "SSL verwenden" und "StartTLS verwenden" bei SMTP oder IMAP, da sie sich gegenseitig ausschließen.
+- Ports nicht zwischen IMAP und SMTP mischen sondern nur folgende Ports verwenden:
+- SMTP: Port 25 oder 587 mit "StartTLS" oder komplett ohne SSL/StartTLS. Alternativ Port 465 mit "SSL".
+- IMAP: Port 143 mit "StartTLS" oder komplett ohne SSL/StartTLS. Alternativ Port 993 mit "SSL"
+- Da immer mehr Mail Provider eine Verschlüsselung erzwingen und auch zum Schutz der verschicken Informationen in den Mails, sollte eine valide Kombination aus Port und Verschlüsselung ausgewählt werden. 
+- Wenn keine Kopie der Mail im Mailprogramm erforderlich ist, kann man die Option "Kopie in 'Gesendete'-Ordner IMAP ablegen" auch deaktiviert lassen.
+- Wenn "Kopie in 'Gesendete'-Ordner IMAP ablegen" aktiviert ist, dann ist darauf zu achten, dass der "IMAP 'Gesendete'-Ordername" korrekt geschrieben ist. Der kann sich u.U. auch innerhalb der Inbox befindet. Unter Umständen muss dann z.B. "Inbox.SENT" oder "Inbox.Gesendete Objekte" geschrieben werden. Das hängt vom Mailserver ab. Ggf. im Mailprogramm nachschauen, wenn der Account dort eingerichtet ist.
 
 ## Statistik
 
